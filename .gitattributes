@@ -1,0 +1,19 @@
+﻿CHANGELOG.md merge=union
+
+# Ignore all files in the 'venv' directory
+#venv/* ignored
+# Treat all files in the 'images' directory as binary
+images/* binary
+img/* binary
+# Use the 'diffuse' merge tool for all '.txt' files
+#*.txt merge=diffuse
+# Use the 'sdiff' diff tool for all '.pdf' files
+#*.pdf diff=sdiff
+# Exclude the 'secrets.json' file from all commits
+#secrets.json exclude
+# Include only lines starting with '//' in the 'README.md' file
+#README.md include=^//
+# Skip the pre-commit hook for all files in the 'docs' directory
+#docs/* precommit=skip
+# Run a script called 'update_dependencies.sh' after each commit
+#* postcommit=./update_dependencies.sh

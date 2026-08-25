@@ -1,0 +1,95 @@
+/* ─── Global Design Tokens & Theme Overrides ─────────────────── */
+/* Consuming websites can override these tokens to theme all shared components. */
+:root {
+  /* Brand Palettes */
+  --ih-color-primary: #0a0f2c;
+  --ih-color-primary-dark: #08163a;
+  --ih-color-surface: rgba(255, 255, 255, 0.92);
+  --ih-color-surface-dark: rgba(10, 15, 44, 0.65);
+  --ih-color-border: rgba(125, 249, 255, 0.18);
+  --ih-color-border-subtle: rgba(255, 255, 255, 0.1);
+  --ih-color-text-primary: #ffffff;
+  --ih-color-text-secondary: rgba(200, 220, 255, 0.75);
+  --ih-color-text-muted: rgba(200, 220, 255, 0.45);
+  --ih-color-accent: #7df9ff;
+  --ih-color-accent-hover: #a0fbff;
+
+  /* Gradients */
+  --ih-gradient-accent: linear-gradient(135deg, #7df9ff 0%, #00c8d4 100%);
+  --ih-gradient-accent-hover: linear-gradient(135deg, #a0fbff 0%, #00e0ee 100%);
+  --ih-gradient-accent-h: linear-gradient(90deg, #7df9ff, #00c8d4);
+  --ih-gradient-accent-v: linear-gradient(180deg, #7df9ff, #00c8d4);
+
+  /* Typography */
+  --ih-font-sans: 'Inter', Helvetica, sans-serif;
+  --ih-font-heading: 'Outfit', 'Inter', Helvetica, sans-serif;
+
+  /* Effects */
+  --ih-blur-glass: 14px;
+  --ih-radius-sm: 6px;
+  --ih-radius-lg: 16px;
+  --ih-shadow-glow: 0 0 16px rgba(125, 249, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --ih-shadow-glow-hover: 0 0 28px rgba(125, 249, 255, 0.7), 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ─── Global Page Base ────────────────────────────────────────── */
+body {
+  background-color: #2e3141;
+  background-image: linear-gradient(to top, rgba(74, 95, 215, 0.8), rgba(135, 145, 203, 0.8));
+  background-size: auto, cover;
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+  font-family: var(--ih-font-sans);
+}
+
+.bodyHeader {
+  padding: 10em 0 4.75em 0;
+}
+
+.bodyHeader .col-md-5 {
+  width: 53%;
+}
+
+p {
+  filter: blur(0);
+  opacity: 1;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  text-transform: uppercase;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+}
+
+.bodyAbout {
+  background-color: #4c5c96;
+}
+
+.bodyAbout .col-md-6 {
+  padding: 3em 0 1em 0;
+}
+
+.bodyAbout .logo-link {
+  margin: 0 0 2em 3em;
+}
+
+.bodyAbout h2 {
+  color: #ffffff;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+}
+
+.bodyAbout .logo {
+  border-radius: 100%;
+  width: 100%;
+}
+
+nav.navbar.navbar-dark {
+  background: rgb(255, 255, 255);
+}

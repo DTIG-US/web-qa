@@ -1,0 +1,143 @@
+{
+  "menu": [
+    {
+      "label": "Login",
+      "url": "https://login.insightfulhealthai.com/login.html"
+    },
+    {
+      "label": "Hand-Sanitation-as-a-Service",
+      "url": "https://hsaas.insightfulhealthai.com/"
+    },
+    {
+      "label": "Devices/Products",
+      "url": "https://devices.insightfulhealthai.com/"
+    },
+    {
+      "label": "Create Your Organization",
+      "url": "https://register.insightfulhealthai.com/"
+    },
+    {
+      "label": "Register A New Device",
+      "url": "https://dps.insightfulhealthai.com/"
+    },
+    {
+      "label": "Enroll Resources",
+      "url": "https://enrollment.insightfulhealthai.com/"
+    },
+    {
+      "label": "Knowledge Base",
+      "url": "https://hsaas.insightfulhealthai.com/"
+    },
+    {
+      "label": "Investor Information",
+      "url": "https://investor.insightfulhealthai.com/"
+    }
+  ],
+  "title": "Insightful Health AI",
+  "logo": "images/Logo-IH-Transparent-Header.png",
+  "carousel": [
+    {
+      "title": "Prevent HAIs at the Point of Care",
+      "label": "Real-Time Smart Protection",
+      "description": "Predictive and reactive guidance helps improve hand hygiene compliance before risks become infections.",
+      "image": "images/Hand-Sani-Positive.png"
+    },
+    {
+      "title": "Extend Compliance Across Your Enterprise",
+      "label": "BYOD AI Platform",
+      "description": "Leverage existing cameras and IoT devices to scale intelligent monitoring without new infrastructure.",
+      "image": "images/Hand-Sani-Positive.png"
+    },
+    {
+      "title": "Turn Video Into Regulatory Intelligence",
+      "label": "Hand Hygiene as a Service",
+      "description": "Transform video feeds into compliance metrics, audit readiness, and actionable performance insights.",
+      "image": "images/Hand-Sani-Positive-2.png"
+    }
+  ],
+  "news": [
+    {
+      "title": "Insightful Health Achieves Record Hand Hygiene Compliance",
+      "url": "https://www.google.com/"
+    },
+    {
+      "title": "Insightful Health Releases Device Software Update 4.0",
+      "url": "https://www.google.com/"
+    },
+    {
+      "title": "Regional Medical Center Reduces Audit Time by 80%",
+      "url": "https://www.google.com/"
+    },
+    {
+      "title": "New Dashboard Gives Hospitals a Clearer View of Hand Hygiene Performance",
+      "url": "https://www.google.com/"
+    },
+    {
+      "title": "Predictive Analytics Helps Prevent Compliance Gaps Before They Occur",
+      "url": "https://www.google.com/"
+    }
+  ],
+  "partners": [
+    {
+      "name": "VisualQ",
+      "url": "https://www.visualqai.com/",
+      "image": "images/Logo-VisualQ.png"
+    },
+    {
+      "name": "MHub",
+      "url": "https://www.mhub.org/",
+      "image": "images/Logo-MHub-Chicago.png"
+    },
+    {
+      "name": "Marshall Gerstein",
+      "url": "https://www.marshallip.com/",
+      "image": "images/Logo-MarshallGerstein.png"
+    },
+    {
+      "name": "DTIG",
+      "url": "https://www.dtig.us/",
+      "image": "images/Logo-DTIG-Long.png"
+    },
+    {
+      "name": "Western Reserve Hospital",
+      "url": "https://www.westernreservehospital.org/",
+      "image": "images/Logo-Western-Reserve-Hospital.png"
+    },
+    {
+      "name": "Mercy Health – St. Elizabeth Youngstown Hospital",
+      "url": "https://www.mercy.com/",
+      "image": "images/Logo-Mercy-Hospital.png"
+    }
+  ],
+  "offerings": [
+    {
+      "id": "Devices",
+      "title": "Smart Hand Hygiene Devices",
+      "description": "Purpose-built, HIPAA-compliant devices deliver real-time engagement and measurable compliance improvements with installation in minutes.",
+      "image": "/images/Our-Devices.png",
+      "url": "/pages/our-devices.html"
+    },
+    {
+      "id": "BYOD",
+      "title": "Bring Your Own Device",
+      "description": "Transform your existing cameras and IoT infrastructure into intelligent hand hygiene monitoring solutions without costly hardware upgrades.",
+      "image": "/images/Coming_Soon_Black.png",
+      "url": "/pages/byod.html"
+    },
+    {
+      "id": "API",
+      "title": "Hand Hygiene as a Service",
+      "description": "Embed compliance analytics, performance metrics, and AI-powered insights directly into your applications through a simple API.",
+      "image": "/images/Coming_Soon_Black.png",
+      "url": "/pages/api.html"
+    }
+  ],
+  "footer": {
+    "text": "© 2026 Insightful Health AI. All rights reserved.",
+    "phone": "773-745-1123",
+    "email": "device-sales @ insightfulhealthai.com"
+  }
+}
+
+
+

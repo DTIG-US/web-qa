@@ -1,17 +1,12 @@
 #!/bin/bash
 
-# Get the absolute path to the Terraform directory relative to this script
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-TERRAFORM_DIR="$SCRIPT_DIR/../src/terraform"
+# Usage: ./www_deploy.sh <env>
+#   env: dev | staging | prod
+ENV="${1:?Usage: $0 <dev|staging|prod>}"
 
-# 1. Destroy the SWA resource
-TENANT="$1" # Same tenant prefix used during provisioning
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+TERRAFORM_DIR="$SCRIPT_DIR/../terraform"
 
 cd "$TERRAFORM_DIR"
-
-terraform workspace select $TENANT
-terraform destroy -var="prefix=$TENANT" -auto-approve
-
-# Optional: remove the workspace itself once resources are gone
-terraform workspace select default
-terraform workspace delete $TENANT
+terraform workspace select "$ENV"
+terraform destroy -var-file="envs/${ENV}.tfvars" -auto-approve

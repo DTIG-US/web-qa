@@ -1,6 +1,6 @@
 # IH Hand Sanitation - Web Application (`ih-hand-sanitation-www`)
 
-This repository contains the front-end Web Application for the **Insightful Health (IH) Hand Sanitation** portal. Built with Angular, it incorporates modular UI component submodules for reusable page layouts, product offerings, news carousels, headers, footers, and partner showcases.
+This repository contains the front-end Web Application for the **Insightful Health (IH) Hand Sanitation** portal. Built with **Angular v20**, it incorporates five modular UI component submodules for reusable page layouts, product offerings, news carousels, headers, footers, and partner showcases.
 
 ---
 
@@ -10,7 +10,8 @@ This repository contains the front-end Web Application for the **Insightful Heal
 - [Working with Git Submodules](#-working-with-git-submodules)
   - [Submodule Initialization](#submodule-initialization)
   - [Updating Submodules](#updating-submodules)
-  - [Standalone Component Conversion](#standalone-component-conversion)
+  - [Committing with Submodule Handling](#committing-with-submodule-handling)
+  - [Standalone Components in Angular v20+](#standalone-components-in-angular-v20)
 - [Component Submodules Overview](#-component-submodules-overview)
 - [Automation & Helper Scripts](#-automation--helper-scripts)
 - [Documentation & Migration Notes](#-documentation--migration-notes)
@@ -31,19 +32,20 @@ Ensure you have installed:
 
 ### 1-Step Setup Script
 
-For new developers cloning the repository for the first time, run the automated setup script located at [`scripts/getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/getting_started.sh):
+For new developers cloning the repository for the first time, run the automated setup script located at [`scripts/02_getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/02_getting_started.sh):
 
 ```bash
-./scripts/getting_started.sh
+./scripts/02_getting_started.sh
 ```
 
 **What this script does:**
 
-1. Initializes and clones all Git submodules recursively (`git submodule update --init --recursive`).
-2. Installs Node package dependencies defined in [`package.json`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/package.json).
-3. Launches the local Angular development server via `ng serve`.
+1. Updates `src/app/app.html` to include all five layout component selectors.
+2. Patches each submodule component file to be standalone-compatible (imports, selectors).
+3. Copies CSS files from the reference `dtig-web` project to align styles globally.
+4. Updates `angular.json` to include Bootstrap, jQuery, and Slick Carousel styles and scripts.
 
-Access the application in your browser at `http://localhost:4200/`.
+Access the application in your browser at `http://localhost:4200/` after running `npm start`.
 
 ---
 
@@ -60,28 +62,46 @@ The UI layout components are hosted in separate Git repositories under the `DTIG
 
 ### Submodule Initialization
 
-If you prefer to initialize submodules manually instead of using `getting_started.sh`:
+If you prefer to initialize submodules manually:
 
 ```bash
 git submodule init
 git submodule update --recursive
 ```
 
-To add a new submodule to `src/app/`, use the helper script [`scripts/add_submodule.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/add_submodule.sh).
+To add a new submodule to `src/app/`, use the helper script [`scripts/01_add_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/01_add_submodules.sh).
 
 ### Updating Submodules
 
-To pull the latest changes for all UI submodules across the project, run [`scripts/update_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/update_submodules.sh):
+To pull the latest changes for all UI submodules across the project, run [`scripts/04_updating_stale_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/04_updating_stale_submodules.sh):
 
 ```bash
-./scripts/update_submodules.sh
+./scripts/04_updating_stale_submodules.sh
 ```
 
-### Standalone Component Conversion
+### Committing with Submodule Handling
 
-The submodules originally contained traditional Angular components requiring `NgModule`. For Angular 15+ & standalone architecture compatibility, components are configured as standalone components in `src/app/app.ts` (`standalone: true` decorator setting).
+To safely commit and push changes across submodules **and** the parent repository in the correct order, use [`scripts/03_commiting_with_submodule_handling.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/03_commiting_with_submodule_handling.sh):
 
-If you re-clone or pull clean submodules, run [`scripts/post_getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/post_getting_started.sh) to re-apply the standalone transformations and style configurations automatically.
+```bash
+# Commit all changed submodules + parent in one step
+./scripts/03_commiting_with_submodule_handling.sh -m "your commit message"
+
+# Commit a specific submodule only
+./scripts/03_commiting_with_submodule_handling.sh -m "fix: header nav" -s src/app/web-header
+
+# Preview what would happen without making changes
+./scripts/03_commiting_with_submodule_handling.sh -m "style: update layout" -n
+```
+
+> [!WARNING]
+> Always use this script (or manually push submodules first) before committing the parent repo. Committing a parent repo pointer to an unpushed submodule SHA will break the repo for other developers.
+
+### Standalone Components in Angular v20+
+
+Angular v20 makes standalone components the default — `standalone: true` is **not** required in component decorators. All five submodule components in this project are standalone. If you re-clone or pull clean submodules and need to re-apply standalone and style configurations, re-run [`scripts/02_getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/02_getting_started.sh).
+
+For tips on recovering a dirty or mismatched submodule reference, see [`doc/Tips_and_Tricks.md`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/Tips_and_Tricks.md).
 
 ---
 
@@ -94,7 +114,7 @@ The layout of the portal is composed of five standalone component submodules:
 | [`src/app/web-header`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-header) | `<app-header>` | [web-header Repo](https://github.com/DTIG-US/web-header) | Navigation header, company branding, and primary menu links. |
 | [`src/app/web-carousel`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-carousel) | `<app-carousel>` | [web-carousel Repo](https://github.com/DTIG-US/web-carousel) | Hero banner carousel and news feed panel using `ngx-slick-carousel`. |
 | [`src/app/web-partner`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-partner) | `<app-partners>` | [web-partner Repo](https://github.com/DTIG-US/web-partner) | Partner logo showcase and affiliate link slider. |
-| [`src/app/web-offering`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-offering) | `<app-offering>` | [web-offering Repo](https://github.com/DTIG-US/web-offering) | Product and service feature matrix grid. |
+| [`src/app/web-offering`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-offering) | `<app-offering>` | [web-offering Repo](https://github.com/DTIG-US/web-offering) | Product and service feature matrix grid with alternating layout. |
 | [`src/app/web-footer`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/src/app/web-footer) | `<app-footer>` | [web-footer Repo](https://github.com/DTIG-US/web-footer) | Page footer, copyright, privacy policy, and social links. |
 
 ---
@@ -103,17 +123,30 @@ The layout of the portal is composed of five standalone component submodules:
 
 Helper bash scripts are located in the [`scripts/`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/) folder to simplify development:
 
-- [`scripts/getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/getting_started.sh) — One-click setup: initializes submodules, installs `node_modules`, and starts the dev server.
-- [`scripts/update_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/update_submodules.sh) — Syncs and pulls the latest commits across all five Git submodules.
-- [`scripts/add_submodule.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/add_submodule.sh) — Batch adds and configures required UI submodules into `src/app/`.
-- [`scripts/post_getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/post_getting_started.sh) — Migration & post-setup utility that converts components to standalone, patches `angular.json` styles, and links Bootstrap/Slick dependencies.
+| Script | Purpose |
+| --- | --- |
+| [`01_add_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/01_add_submodules.sh) | Registers and clones all five UI submodules into `src/app/` via `git submodule add`. |
+| [`02_getting_started.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/02_getting_started.sh) | Full migration setup: patches component files to standalone, copies CSS, and updates `angular.json`. |
+| [`03_commiting_with_submodule_handling.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/03_commiting_with_submodule_handling.sh) | Safely commits and pushes submodule changes **before** updating the parent repo pointer. Prevents broken SHA references. Supports `-m`, `-s`, `-n` (dry-run) flags. |
+| [`04_updating_stale_submodules.sh`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/scripts/04_updating_stale_submodules.sh) | Runs `git submodule update --init --recursive` to sync all submodules to their pinned commits. |
 
 ---
 
 ## 📄 Documentation & Migration Notes
 
-- [Migration Documentation](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/Migration_Documentation.md) — Architectural notes on converting template components to standalone, registering `SlickCarouselModule`, and syncing global CSS styles (`styles.css`, `bootstrap`, `slick-carousel`).
+Additional documentation is available in the [`doc/`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/) folder:
+
+| Document | Description |
+| --- | --- |
+| [`Migration_Documentation.md`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/Migration_Documentation.md) | Step-by-step notes on converting template components to standalone, registering `SlickCarouselModule`, patching `angular.json`, and syncing global CSS styles. |
+| [`README_AligningComponents.md`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/README_AligningComponents.md) | Walkthrough of the Offerings & Partners component alignment work — alternating backgrounds, glassmorphism, layout delineation, and accessibility updates. |
+| [`Tips_and_Tricks.md`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/doc/Tips_and_Tricks.md) | Quick reference for common submodule operations: syncing, recovering dirty submodule references, and cleaning uncommitted changes. |
+
+Other key project files:
+
 - [AGENTS.md](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/AGENTS.md) — Angular and TypeScript development guidelines for AI and human contributors.
+- [AUTHORS.md](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/AUTHORS.md) — Project contributors.
+- [SECURITY.md](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/SECURITY.md) — Security policy and vulnerability reporting.
 
 ---
 
@@ -122,14 +155,20 @@ Helper bash scripts are located in the [`scripts/`](file:///home/b0nz1cu5/Develo
 Standard Angular CLI commands configured in [`package.json`](file:///home/b0nz1cu5/Development/IH/ih-hand-sanitation-www/package.json):
 
 ```bash
+# Install dependencies
+npm install
+
 # Start local dev server (http://localhost:4200)
 npm start
 
 # Build for production
 npm run build
 
-# Run unit tests
+# Run unit tests (Karma + Jasmine)
 npm test
+
+# Watch mode build (development)
+npm run watch
 
 # Serve using Static Web Apps CLI (for Azure SWA testing)
 npx swa start

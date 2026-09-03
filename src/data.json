@@ -1,71 +1,67 @@
 {
+  "title": "YOUR SITE TITLE HERE",
+  "logo": "images/Coming_Soon_Black.png",
   "menu": [
     {
-      "label": "Login",
-      "url": "https://login.insightfulhealthai.com/login.html"
+      "label": "Web Template GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-template.git"
     },
     {
-      "label": "Hand-Sanitation-as-a-Service",
-      "url": "https://hsaas.insightfulhealthai.com/"
+      "label": "Web Header GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-header.git"
     },
     {
-      "label": "Devices/Products",
-      "url": "https://devices.insightfulhealthai.com/"
+      "label": "Web Carousel GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-carousel.git"
     },
     {
-      "label": "Create Your Organization",
-      "url": "https://register.insightfulhealthai.com/"
+      "label": "Web Offering GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-offering.git"
     },
     {
-      "label": "Register A New Device",
-      "url": "https://dps.insightfulhealthai.com/"
+      "label": "Web Partner GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-partner.git"
     },
     {
-      "label": "Enroll Resources",
-      "url": "https://enrollment.insightfulhealthai.com/"
+      "label": "Web Footer GitHub Repo",
+      "url": "https://github.com/DTIG-US/web-footer.git"
     },
     {
-      "label": "Knowledge Base",
-      "url": "https://hsaas.insightfulhealthai.com/"
-    },
-    {
-      "label": "Investor Information",
-      "url": "https://investor.insightfulhealthai.com/"
+      "label": "Hand Sani Demo GitHub Repo",
+      "url": "https://github.com/DTIG-US/hand-sani-demo.git"
     }
   ],
-  "title": "Insightful Health AI",
-  "logo": "images/Logo-IH-Transparent-Header.png",
   "carousel": [
     {
-      "title": "Prevent HAIs at the Point of Care",
-      "label": "Real-Time Smart Protection",
-      "description": "Predictive and reactive guidance helps improve hand hygiene compliance before risks become infections.",
-      "image": "images/Hand-Sani-Positive.png"
+      "title": "Carousel Title - Slide 1",
+      "label": "Label or Headline - Slide 1",
+      "description": "Carousel Description - Slide 1",
+      "image": "/images/Coming_Soon_Black.png"
     },
     {
-      "title": "Extend Compliance Across Your Enterprise",
-      "label": "BYOD AI Platform",
-      "description": "Leverage existing cameras and IoT devices to scale intelligent monitoring without new infrastructure.",
-      "image": "images/Hand-Sani-Positive.png"
+      "title": "Carousel Title - Slide 2",
+      "label": "Label or Headline - Slide 2",
+      "description": "Carousel Description - Slide 2",
+      "image": "/images/Coming_Soon_Black.png"
     },
     {
-      "title": "Turn Video Into Regulatory Intelligence",
-      "label": "Hand Hygiene as a Service",
-      "description": "Transform video feeds into compliance metrics, audit readiness, and actionable performance insights.",
-      "image": "images/Hand-Sani-Positive-2.png"
+      "title": "Carousel Title - Slide 3",
+      "label": "Label or Headline - Slide 3",
+      "description": "Carousel Description - Slide 3",
+      "image": "/images/Coming_Soon_Black.png"
     }
   ],
   "news": [
     {
-      "title": "Insightful Health Releases Device Software Update 4.0",
+      "title": "News Title - Article 1",
       "url": "https://www.google.com/"
     },
     {
-      "title": "New Dashboard Gives Hospitals a Clearer View of Hand Hygiene Performance",
+      "title": "News Title - Article 2",
       "url": "https://www.google.com/"
     },
     {
-      "title": "Predictive Analytics Helps Prevent Compliance Gaps Before They Occur",
+      "title": "News Title - Article 3",
       "url": "https://www.google.com/"
     }
   ],
@@ -103,31 +99,31 @@
   ],
   "offerings": [
     {
-      "id": "Devices",
-      "title": "Smart Hand Hygiene Devices",
-      "description": "Purpose-built, HIPAA-compliant devices deliver real-time engagement and measurable compliance improvements with installation in minutes.",
-      "image": "/images/Our-Devices.png",
+      "id": "ID - Offering 1",
+      "title": "Offering Title - Offering 1",
+      "description": "Offering Description - Offering 1",
+      "image": "/images/Coming_Soon_Black.png",
       "url": "/pages/our-devices.html"
     },
     {
-      "id": "BYOD",
-      "title": "Bring Your Own Device",
-      "description": "Transform your existing cameras and IoT infrastructure into intelligent hand hygiene monitoring solutions without costly hardware upgrades.",
+      "id": "ID - Offering 2",
+      "title": "Offering Title - Offering 2",
+      "description": "Offering Description - Offering 2",
       "image": "/images/Coming_Soon_Black.png",
       "url": "/pages/byod.html"
     },
     {
-      "id": "API",
-      "title": "Hand Hygiene as a Service",
-      "description": "Embed compliance analytics, performance metrics, and AI-powered insights directly into your applications through a simple API.",
+      "id": "ID - Offering 3",
+      "title": "Offering Title - Offering 3",
+      "description": "Offering Description - Offering 3",
       "image": "/images/Coming_Soon_Black.png",
       "url": "/pages/api.html"
     }
   ],
   "footer": {
-    "text": "© 2026 Insightful Health AI. All rights reserved.",
+    "text": "© 2026 Digital Transformation Innovators Group, LLC. All rights reserved.",
     "phone": "773-745-1123",
-    "email": "device-sales @ insightfulhealthai.com"
+    "email": "sales @ dtig.us"
   }
 }
 
